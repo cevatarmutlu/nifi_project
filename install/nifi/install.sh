@@ -1,12 +1,13 @@
 ## install Java
-sudo apt-get -y install openjdk-8-jdk
+sudo apt update -y
+sudo apt install openjdk-8-jdk -y
 
 NIFI_VERSION=1.13.2
 
-## Download nifi-NIFI_VERSION.tar.gz file
+## Download tar.gz
 wget https://archive.apache.org/dist/nifi/$NIFI_VERSION/nifi-$NIFI_VERSION-bin.tar.gz
 
-## Extract nifi
+## Extract tar.gz
 tar -xzvf nifi-$NIFI_VERSION-bin.tar.gz
 
 ## Remove tar.gz file
