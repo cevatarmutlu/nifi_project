@@ -1,6 +1,12 @@
 ## install Java
 sudo apt update -y
-sudo apt install openjdk-8-jdk -y
+sudo apt install openjdk-8-jdk openssh-server openssh-client -y
+
+
+ssh-keygen -t rsa -P '' -f ~/.ssh/id_rsa
+cat ~/.ssh/id_rsa.pub >> ~/.ssh/authorized_keys
+chmod 0600 ~/.ssh/authorized_keys
+
 
 ## Version
 HADOOP_VERSION=3.2.2
@@ -9,7 +15,7 @@ HADOOP_VERSION=3.2.2
 wget https://dlcdn.apache.org/hadoop/common/hadoop-$HADOOP_VERSION/hadoop-$HADOOP_VERSION.tar.gz
 
 ## Extract tar.gz
-tar xzf hadoop-$HADOOP_VERSION.tar.gz
+tar -xzvf hadoop-$HADOOP_VERSION.tar.gz
 
 ## Remove tar.gz
 rm hadoop-$HADOOP_VERSION.tar.gz
